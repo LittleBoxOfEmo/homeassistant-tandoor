@@ -40,7 +40,7 @@ class TandoorDataUpdateCoordinator(DataUpdateCoordinator[TandoorData]):
         try:
             today = date.today()
             data.meal_plan = await self.client.get_meal_plan(
-                today, today + timedelta(days=6)
+                today, today + timedelta(days=13)
             )
             data.shopping_list = await self.client.get_shopping_list_entries()
             if self._meal_types_cache is None:

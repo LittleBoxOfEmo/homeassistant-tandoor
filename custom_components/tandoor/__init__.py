@@ -36,7 +36,7 @@ from .coordinator import TandoorDataUpdateCoordinator
 
 _LOGGER = logging.getLogger(__name__)
 
-PLATFORMS: list[Platform] = [Platform.SENSOR, Platform.TODO]
+PLATFORMS: list[Platform] = [Platform.SENSOR, Platform.TODO, Platform.CALENDAR]
 
 # Setup is only via the UI config flow; there is no YAML configuration.
 CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)

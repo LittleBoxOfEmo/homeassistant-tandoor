@@ -11,7 +11,18 @@ version), so your meal plan and shopping list live inside Home Assistant too.
 - **Sensors**
   - `sensor.today_s_meals` — how many meals are planned today, with the recipe
     names/meal types as attributes.
+  - `sensor.next_meal` — the next upcoming planned meal (today or later), state
+    is the recipe/title name, with date/meal type/servings as attributes. Good
+    for automations that react to a specific upcoming meal.
+  - `sensor.upcoming_meals` — count of meals planned over the next ~2 weeks,
+    with the full list as an attribute.
   - `sensor.shopping_list_items` — count of open shopping list items.
+- **Calendar**
+  - `calendar.meal_plan` — the meal plan as a native HA calendar entity. Shows
+    up in the Calendar dashboard, supports the standard calendar card, and can
+    be used as an automation/condition trigger. Meals with a configured meal
+    type time (e.g. Dinner @ 18:00 in Tandoor) show as 1-hour timed events;
+    meals without a time show as all-day events.
 - **Todo list**
   - A Home Assistant `todo` entity mirroring your Tandoor shopping list — check
     items off, add new ones, or delete them, from HA (Lovelace todo card, voice
