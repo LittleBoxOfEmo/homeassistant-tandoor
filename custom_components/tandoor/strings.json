@@ -5,7 +5,7 @@
         "title": "Connect to Tandoor",
         "description": "Enter your Tandoor instance URL and an API access token (create one in Tandoor under Settings > API, using the Bearer/Access Token type).",
         "data": {
-          "host": "Host (e.g. https://app.tandoor.dev/space/your-space)",
+          "host": "Host (include the /space/... path if your instance uses one)",
           "api_token": "API token",
           "verify_ssl": "Verify SSL certificate"
         }

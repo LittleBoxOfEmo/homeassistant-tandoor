@@ -38,6 +38,9 @@ _LOGGER = logging.getLogger(__name__)
 
 PLATFORMS: list[Platform] = [Platform.SENSOR, Platform.TODO]
 
+# Setup is only via the UI config flow; there is no YAML configuration.
+CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
+
 SEARCH_RECIPES_SCHEMA = vol.Schema(
     {
         vol.Optional("config_entry_id"): cv.string,
