@@ -1,0 +1,88 @@
+search_recipes:
+  name: Search recipes
+  description: Search recipes in Tandoor and return matches (id, name, image, servings).
+  fields:
+    query:
+      name: Query
+      description: Free-text search term.
+      example: "chicken curry"
+      selector:
+        text:
+    limit:
+      name: Limit
+      description: Maximum number of results to return.
+      default: 10
+      selector:
+        number:
+          min: 1
+          max: 50
+
+add_meal_plan:
+  name: Add meal plan entry
+  description: Add a recipe (or a freeform note) to the Tandoor meal plan.
+  fields:
+    config_entry_id:
+      name: Tandoor instance
+      description: Which configured Tandoor instance to use.
+      required: true
+      selector:
+        config_entry:
+          integration: tandoor
+    recipe_id:
+      name: Recipe ID
+      description: ID of the recipe to plan (from search_recipes). Omit for a note-only entry.
+      selector:
+        number:
+          min: 1
+          mode: box
+    meal_type_id:
+      name: Meal type ID
+      description: ID of the Tandoor meal type (breakfast/lunch/dinner/etc).
+      required: true
+      selector:
+        number:
+          min: 1
+          mode: box
+    date:
+      name: Date
+      description: Date to plan the meal for. Defaults to today.
+      selector:
+        date:
+    servings:
+      name: Servings
+      default: 1
+      selector:
+        number:
+          min: 0.5
+          step: 0.5
+    note:
+      name: Note
+      selector:
+        text:
+
+add_shopping_list_item:
+  name: Add shopping list item
+  description: Add an item to the Tandoor shopping list.
+  fields:
+    config_entry_id:
+      name: Tandoor instance
+      required: true
+      selector:
+        config_entry:
+          integration: tandoor
+    name:
+      name: Item name
+      required: true
+      selector:
+        text:
+    amount:
+      name: Amount
+      default: 0
+      selector:
+        number:
+          min: 0
+          step: 0.1
+    unit:
+      name: Unit
+      selector:
+        text:

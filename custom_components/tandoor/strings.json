@@ -1,0 +1,23 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Tandoor",
+        "description": "Enter your Tandoor instance URL and an API access token (create one in Tandoor under Settings > API, using the Bearer/Access Token type).",
+        "data": {
+          "host": "Host (e.g. https://app.tandoor.dev/space/your-space)",
+          "api_token": "API token",
+          "verify_ssl": "Verify SSL certificate"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid API token.",
+      "cannot_connect": "Could not connect to Tandoor at that host.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This Tandoor instance is already configured."
+    }
+  }
+}
